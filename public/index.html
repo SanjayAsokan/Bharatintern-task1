@@ -3,34 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registraction Form</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>REGISTRATION</title>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-mod-3">
-                
-            </div>
-            <div class="col-md-6 main">
-                <form action="/sign_up" method="POST">
-                    <h2>Registraction Form</h2>
-                    <input type="text" class="box" id="name" name="name" placeholder="Name" required/>
-                    <br>
-                    <input type="text" class="box" id="age" name="age" placeholder="Age" required/>
-                    <br>
-                    <input type="text" class="box" id="phno" name="phno" placeholder="Phno" required/>
-                    <br>
-                    <input type="text" class="box" id="gender" name="gender" placeholder="Gender" required/>
-                    <br>
-                    <input type="text" class="box" id="password" name="password" placeholder="Password" required/>
-                    <br>
-                    <input type="submit" value="submit" id="submit" />
-                </form>
-            </div>
+    <section class="forms">
+        <div class="forms1">
+          <div class="form-wrapper is-active">
+            <button type="button" class="switchers switchers-login">
+              HOME PAGE
+              <span class="underline"></span>
+            </button>
+            <form class="form form-login">
+                <div class="input-block">
+                  
+                 <h1>SIMPLE REGISTRATION PAGE USING<br>HTML,CSS,Node.js and MongoDb server </h1>
+                </div>
+                <div class="input-block">
+                  <h2> Register to SIGNUP!!!!</h2>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="form-wrapper">
+            <button type="button" class="switchers switchers-signup">
+              Sign Up
+              <span class="underline"></span>
+            </button>
+            <form class="form form-signup"  action="/signup" method="post">
+              <fieldset>
+                <div class="input-block">
+                    <label>Name</label>
+                    <input id="login-name" type="text" name="name" required>
+                  </div>
+                <div class="input-block">
+                  <label>E-mail</label>
+                  <input id="signup-email" type="email" name="email" required>
+                </div> 
+                <div class="input-block">
+                    <label>Phone No</label>
+                    <input id="signup-phno" type="number" name="phno" required>
+                  </div>
+                <div class="input-block">
+                  <label>Password</label>
+                  <input id="signup-password" type="password" name="password" required>
+                </div>
+              </fieldset>
+              <button type="submit" class="btn-signup">Signin</button>
+            </form>
+          </div>
         </div>
-    </div>
-    
+      </section>
+</form>
+<script>
+    const switchers = [...document.querySelectorAll('.switchers')]
+
+switchers.forEach(item => {
+	item.addEventListener('click', function() {
+		switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+		this.parentElement.classList.add('is-active')
+	})
+})
+</script>
 </body>
 </html>
